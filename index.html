@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi PLE - Enrique Gómez</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0055a5, #0099cc);
+            color: white;
+            padding: 2em 1em;
+            text-align: center;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px 35px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #0055a5;
+        }
+
+        .herramientas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .card {
+            background: #eaf2fb;
+            border-radius: 10px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            font-weight: 500;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        button {
+            background: #0055a5;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #003f7f;
+        }
+
+        footer {
+            text-align: center;
+            background: #0055a5;
+            color: white;
+            padding: 1.2em;
+            margin-top: 40px;
+        }
+
+        .oculto {
+            display: none;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mi Entorno Personal de Aprendizaje (PLE)</h1>
+    <p>Por Enrique Gómez — Biomédico y Profesor Universitario</p>
+</header>
+
+<section>
+    <h2>¿Qué es mi PLE?</h2>
+    <p>
+        Mi Entorno Personal de Aprendizaje (PLE) es el conjunto de herramientas, recursos y estrategias digitales que utilizo
+        para aprender, enseñar y desarrollar proyectos de investigación. 
+        Como docente e investigador en ingeniería biomédica, mi PLE combina el uso de plataformas colaborativas, 
+        inteligencia artificial y recursos científicos para mantenerme actualizado y compartir conocimiento con mis estudiantes.
+    </p>
+</section>
+
+<section>
+    <h2>Herramientas que utilizo</h2>
+    <div class="herramientas">
+        <div class="card">Python</div>
+        <div class="card">NumPy</div>
+        <div class="card">OpenCV</div>
+        <div class="card">ChatGPT</div>
+        <div class="card">Microsoft Teams</div>
+        <div class="card">Google Drive</div>
+        <div class="card">Canva</div>
+        <div class="card">GitHub</div>
+    </div>
+</section>
+
+<section>
+    <h2>Cómo organizo y gestiono mi aprendizaje</h2>
+    <p>
+        Organizo mis recursos de aprendizaje en la nube mediante <strong>Google Drive</strong> y gestiono mis clases con 
+        <strong>Microsoft Teams</strong>. Para la programación y el análisis de datos utilizo <strong>Python</strong>, 
+        junto con librerías como <em>NumPy</em> y <em>OpenCV</em>, que aplico en proyectos de visión por computadora y análisis de señales biomédicas.  
+        Además, utilizo <strong>ChatGPT</strong> y <strong>GitHub</strong> como apoyo en la generación, revisión y documentación de código.  
+        Para diseñar materiales educativos visuales, empleo <strong>Canva</strong>.
+    </p>
+</section>
+
+<section>
+    <h2>Estrategias de aprendizaje digital</h2>
+    <p>
+        Mi estrategia se basa en el aprendizaje autodirigido y continuo. Me mantengo actualizado a través de cursos en línea,
+        literatura científica y comunidades académicas digitales. 
+        Procuro aplicar un enfoque práctico, conectando la teoría con la experimentación y el análisis computacional.
+    </p>
+    <button id="mostrarConsejo">Ver consejo de aprendizaje</button>
+    <p id="consejo" class="oculto"></p>
+</section>
+
+<footer>
+    <p>Creado por Enrique Gómez — Maestría en Ciencias con Opción a la Computación y Matemáticas Aplicadas</p>
+</footer>
+
+<script>
+    const consejos = [
+        "Integra la inteligencia artificial como apoyo para el análisis y la docencia.",
+        "Organiza tus proyectos en GitHub para mantener control de versiones.",
+        "Aprende constantemente nuevas librerías de Python aplicadas a la biomedicina.",
+        "Crea materiales visuales con Canva para explicar temas complejos de forma sencilla.",
+        "Utiliza ChatGPT para obtener retroalimentación rápida sobre tus ideas y código."
+    ];
+
+    document.getElementById("mostrarConsejo").addEventListener("click", () => {
+        const consejo = consejos[Math.floor(Math.random() * consejos.length)];
+        const p = document.getElementById("consejo");
+        p.textContent = "💡 " + consejo;
+        p.classList.remove("oculto");
+    });
+</script>
+
+</body>
+</html>
